@@ -1,41 +1,79 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: sans-serif;
-  line-height: 1.6em;
+    font-family: sans-serif;
+    line-height: 1.6em;
 }
 
 .subtask {
-  margin: 20px 0;
-  border: 1px solid lightblue;
-  border-radius: 8px;
-  padding: 16px;
+    margin: 20px 0;
+    border: 1px solid lightblue;
+    border-radius: 8px;
+    padding: 16px;
 }
 
 ul {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-  color: white;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
 }
 
 ul > li {
-  list-style-type: none;
-  padding: 20px;
-  float: left;
-  background-color: lightpink;
-  width: calc(100%/6);
+    list-style-type: none;
+    padding: 20px;
+    float: left;
+    background-color: lightpink;
+    width: calc(100%/6);
 }
 
 ul > li img {
-  margin: 0 auto;
-  display: block;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
 }
 
 .clearfix {
-  clear: both;
+    clear: both;
 }
 
+
 /* Вашият CSS от тук надолу */
+
+ul > li:nth-of-type(even) {
+    background-color: lightblue;
+}
+
+ul > li:hover {
+    transform: rotateZ(-360deg);
+    transition-duration: 1s;
+    background-color: lightblue;
+}
+
+li::after {
+    content: "Imagine That!";
+    position: absolute;
+    text-align: center;
+    color: darkgray;
+    
+}
+
+@media (min-width:1000px) {
+    ul > li {
+        width: calc(100%/6);
+    }
+}
+
+@media (min-width:600px) {
+    ul > li {
+        width: calc(100%/3);
+    }
+}
+
+@media (min-width:400px) {
+    ul > li {
+        width: calc(100%/2);
+    }
+}
